@@ -51,7 +51,7 @@ def get_author(id):
     return jsonify(author.__dict__)
 
 
-@app.route('/check', methods=['GET'])
+@app.route('/', methods=['GET'])
 def check_service():
     return jsonify({'message': 'Service is running...'}), 200
 
