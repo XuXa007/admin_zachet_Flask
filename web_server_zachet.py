@@ -20,6 +20,11 @@ authors = [Author(1, "George Orwell"), Author(2, "Aldous Huxley")]
 books = [Book(1, "1984", 1), Book(2, "Brave New World", 2)]
 
 
+@app.route('/', methods=['GET'])
+def empty():
+    return jsonify("Hello World!")
+
+
 @app.route('/books', methods=['GET'])
 def get_books():
     return jsonify({'books': [book.__dict__ for book in books], 'count': len(books)})
